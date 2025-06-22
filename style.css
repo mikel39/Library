@@ -1,3 +1,122 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(./assets/fonts/static/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(./assets/fonts/static/Roboto-Bold.ttf);
+  font-weight: bold;
+}
+
+*,
+*::after *::before {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --background: #fef6e4;
+  --button: #f582ae;
+  --text: #001858;
+  --main: #f3d2c1;
+  --secodary: #8bd3dd;
+  font-family: "Roboto";
+}
 body {
-  background-color: rgb(59, 59, 59);
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: start;
+}
+.library {
+  background-color: var(--main);
+  border-radius: 10px;
+  padding: 20px 30px;
+  color: var(--text);
+}
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  text-align: center;
+  padding: 6px 20px;
+  border: 2px solid var(--text);
+}
+button {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body > div > button {
+  background-color: var(--text);
+  color: var(--background);
+  align-self: flex-end;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+button.delete {
+  background-color: var(--button);
+  color: var(--text);
+}
+button.edit {
+  background-color: var(--secodary);
+  color: var(--text);
+  margin-left: 8px;
+}
+dialog {
+  background-color: var(--background);
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+}
+dialog > p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+dialog > form {
+  padding: 4px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+form > div > label {
+  display: block;
+  margin-bottom: 10px;
+}
+form fieldset {
+  border: none;
+  width: 75%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+form legend {
+  padding: 0 10px;
+  text-align: left !important;
+}
+form > div:last-child {
+  align-self: center;
+}
+form > div > input {
+  border: none;
+  padding: 6px 12px;
+  background-color: var(--secodary);
+  border-radius: 4px;
+  color: var(--text);
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.7);
 }

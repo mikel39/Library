@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+    />
   </head>
   <body>
     <div class="library">
@@ -20,7 +24,7 @@
         </thead>
         <tbody></tbody>
       </table>
-      <button id="new-book-button" type="button">New Book</button>
+      <button id="new-book-button" type="button">Add Book</button>
     </div>
     <dialog id="modal">
       <p>Add a new Book!</p>
@@ -45,13 +49,19 @@
         </div>
         <fieldset>
           <legend>Read</legend>
-          <input type="radio" name="read" value="yes" checked />
-          <label for="yes">Yes</label>
-          <input type="radio" name="read" value="no" />
-          <label for="no">No</label>
+          <div>
+            <input id="yes" type="radio" name="read" value="yes" checked />
+            <label for="yes">Yes</label>
+          </div>
+          <div>
+            <input id="no" type="radio" name="read" value="no" />
+            <label for="no">No</label>
+          </div>
         </fieldset>
-        <button type="button">Cancel</button>
-        <button id="add-book">ok</button>
+        <div>
+          <button class="delete" type="button" id="close">Cancel</button>
+          <button class="edit" id="add-book">ok</button>
+        </div>
       </form>
     </dialog>
     <script src="script.js"></script>

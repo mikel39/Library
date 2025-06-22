@@ -2,6 +2,7 @@ const tableContainer = document.querySelector(".library > table > tbody");
 const bookButton = document.getElementById("new-book-button");
 const addBook = document.getElementById("add-book");
 const tbodyContainer = document.querySelector("tbody");
+const closeModal = document.getElementById("close");
 
 const myLibrary = [];
 
@@ -34,8 +35,10 @@ const displayBooks = () => {
             <th>${book.title}</th>
             <td>${book.author}</td>
             <td>${book.pages}</td>
-            <td>${book.read ? "Y" : "X"}</td>
-            <td><button class="delete">X</button><button class="edit">Edit</button><td>
+            <td>${
+              book.read ? '<span class="mdi mdi-check-bold"></span>' : "x"
+            }</td>
+            <td><button class="delete">Delete</button><button class="edit">Edit</button></td>
         </tr>
         `;
   });
@@ -58,7 +61,7 @@ addBook.addEventListener("click", () => {
   const author = document.querySelector("#author:valid")?.value;
   const pages = document.querySelector("#pages:valid")?.value;
   const read = document.querySelector(
-    "form > fieldset > input[type='radio']:checked"
+    "form > fieldset input[type='radio']:checked"
   ).value;
 
   if (title && read && author && pages) {
@@ -81,6 +84,10 @@ tbodyContainer.addEventListener("click", (event) => {
     });
     displayBooks();
   }
+});
+
+closeModal.addEventListener("click", () => {
+  document.getElementById("modal").close();
 });
 
 //adding 4 books manually
