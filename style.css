@@ -8,12 +8,6 @@
   src: url(./assets/fonts/static/Roboto-Bold.ttf);
   font-weight: bold;
 }
-
-*,
-*::after *::before {
-  margin: 0;
-  padding: 0;
-}
 :root {
   --background: #fef6e4;
   --button: #f582ae;
@@ -21,6 +15,11 @@
   --main: #f3d2c1;
   --secodary: #8bd3dd;
   font-family: "Roboto";
+}
+*,
+*::after *::before {
+  margin: 0;
+  padding: 0;
 }
 body {
   background-color: var(--background);

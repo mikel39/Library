@@ -6,16 +6,19 @@ const closeModal = document.getElementById("close");
 
 const myLibrary = [];
 
-function Book(id, title, author, pages, read) {
-  this.id = id;
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = () => {
+class Book {
+  constructor(id, title, author, pages, read) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  info = () => {
     return `${title} by ${author}, ${pages}, ${read}.`;
   };
-  this.toggle = () => {
+  toggle = () => {
     this.read = !this.read;
   };
 }
